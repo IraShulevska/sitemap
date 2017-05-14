@@ -1,8 +1,7 @@
-<a href="../index.php">home</a></br>
-<?php
-$numbers = explode(',', file('../files/' . $_GET['file'] . '.txt')[0]);
-
-foreach ($numbers as $val) : 
+<?php 
+	$num = json_encode(explode(',', file('../files/' . $_GET['file'] . '.txt')[0]));
 ?>
-	<a href="1.php?number=<?= $val ?>"><?= $val ?></a></br>
-<?php endforeach;?>
+<a href="../index.php">home</a></br>
+<div id="data" data-files="<?= $_GET['file']?>"></div>
+
+<script src="../js/main.js"></script>
